@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+*, *::before, *::after{
+    box-sizing: border-box;
+    /* outline: 1px solid red; */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    background-color: antiquewhite;
+}
+
+.flip-card{
+    font-size: 5rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    color: #de4848;
+    position: relative;
+}
+
+.top,
+.flip-card .top-flip{
+    background-color: #f1f1f1;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.bottom,
+.flip-card .bottom-flip{
+    background-color: #fff;
+    display: flex;
+    align-items: flex-end;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.top,
+.bottom,
+.flip-card .top-flip,
+.flip-card .bottom-flip {
+    padding: 8px 15px;
+    height: 55px;
+    overflow: hidden;
+}
+
+.flip-card .top-flip {
+    position: absolute;
+    animation: flip-top 0.5s ease-in;
+    transform: rotateX(0);
+    transform-origin: bottom;
+}
+
+.flip-card .bottom-flip {
+    position: absolute;
+    bottom: 0;
+    animation: flip-bottom 0.5s ease-out 0.5s forwards;
+    transform: rotateX(90deg);
+    transform-origin: top;
+}
+
+@keyframes flip-top {
+    0%{
+        transform: rotateX(0);
+    }
+    100%{
+        transform: rotateX(90deg);
+    }
+}
+
+@keyframes flip-bottom {
+    0% {
+        transform: rotateX(90deg);
+    }
+
+    100% {
+        transform: rotateX(0);
+    }
+}
+
