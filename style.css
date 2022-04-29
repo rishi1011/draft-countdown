@@ -2,11 +2,11 @@
 
 *, *::before, *::after{
     box-sizing: border-box;
-    /* outline: 1px solid red; */
 }
 
 body {
     font-family: 'Roboto', sans-serif;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,6 +15,25 @@ body {
     overflow: hidden;
     margin: 0;
     background-color: antiquewhite;
+}
+
+h1, h3 {
+    margin: 0 0 10px;
+    font-weight: 400;
+}
+
+.container{
+    display: flex;
+    gap: 25px;
+}
+
+section{
+    text-align: center;
+}
+
+.cards{
+    display: flex;
+    gap: 10px;
 }
 
 .flip-card{
@@ -48,14 +67,14 @@ body {
 .bottom,
 .flip-card .top-flip,
 .flip-card .bottom-flip {
-    padding: 8px 15px;
+    padding: 8px 25px;
     height: 55px;
     overflow: hidden;
 }
 
 .flip-card .top-flip {
     position: absolute;
-    animation: flip-top 0.5s ease-in;
+    animation: flip-top 0.3s ease-in;
     transform: rotateX(0);
     transform-origin: bottom;
 }
@@ -63,7 +82,7 @@ body {
 .flip-card .bottom-flip {
     position: absolute;
     bottom: 0;
-    animation: flip-bottom 0.5s ease-out 0.5s forwards;
+    animation: flip-bottom 0.3s ease-out 0.3s forwards;
     transform: rotateX(90deg);
     transform-origin: top;
 }
